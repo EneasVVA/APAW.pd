@@ -1,20 +1,8 @@
-package es.upm.miw.pd.composite ;
+package es.upm.miw.pd.composite.expression.solution ;
 
 
 public abstract class Expresion {
-    public Expresion() {
-    }
-
-    public void add() {
-    }
-
-    public void remove() {
-    }
-
-    public void isOperation() {
-    }
-
-    public void operar() {
-    }
+    abstract public boolean isOperation();
+    abstract public int operar();
 
 }
