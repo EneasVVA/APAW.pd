@@ -17,7 +17,7 @@ public class ReferencesFactory {
 
 	
 	
-	public Integer getReference(String key) {
+	public int getReference(String key) {
 		Integer result = this.references.get(key);
 		if(result == null) {
 				this.references.put(key, this.reference);
