@@ -8,18 +8,28 @@ public class Conexion {
 	public Conexion(Link link) {
 		assert link != null;
 		this.link = link;
-		this.estado = Estado.CERRADO;
+		setEstado(new EstadoReady());
 	}
 
-	public Link getLink() {
-		return link;
+	void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 	public Estado getEstado() {
 		return this.estado;
 	}
+	
+	public Link getLink() {
+		return link;
+	}
+
 
 	public void abrir() {
+		estado.abrir(this);
+	}
+	
+	/** TODO **/
+	public void abrir_removeme() {
 		if (this.estado == Estado.CERRADO) {
 			this.estado = Estado.PREPARADO;
 		} else if (this.estado == Estado.PARADO) {
