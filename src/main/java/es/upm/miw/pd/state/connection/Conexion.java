@@ -8,7 +8,7 @@ public class Conexion {
 	public Conexion(Link link) {
 		assert link != null;
 		this.link = link;
-		setEstado(new EstadoReady());
+		setEstado(new EstadoPreparado());
 	}
 
 	void setEstado(Estado estado) {
@@ -28,31 +28,11 @@ public class Conexion {
 		estado.abrir(this);
 	}
 	
-	/** TODO **/
-	public void abrir_removeme() {
-		if (this.estado == Estado.CERRADO) {
-			this.estado = Estado.PREPARADO;
-		} else if (this.estado == Estado.PARADO) {
-			throw new UnsupportedOperationException("Acción no permitida... ");
-		} else if (this.estado == Estado.PREPARADO) {
-		} else if (this.estado == Estado.ESPERANDO) {
-			throw new UnsupportedOperationException("Acción no permitida... ");
-		} else
-			assert false : "estado imposible";
-	}
-
 	public void cerrar() {
-		if (this.estado == Estado.CERRADO) {
-		} else if (this.estado.equals(Estado.PARADO)) {
-			throw new UnsupportedOperationException("Acción no permitida... ");
-		} else if (this.estado == Estado.PREPARADO) {
-			this.estado = Estado.CERRADO;
-		} else if (this.estado == Estado.ESPERANDO) {
-			throw new UnsupportedOperationException("Acción no permitida... ");
-		} else {
-			assert false : "estado imposible";
-		}
+		estado.cerrar(this);
 	}
+	
+
 
 	public void parar() {
 		if (this.estado.equals(Estado.CERRADO)) {
