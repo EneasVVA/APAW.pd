@@ -14,15 +14,6 @@ import es.upm.miw.pd.factoryMethod.naturalNumber.NaturalNumberCreatorEn;
 
 public class AbstractNaturalNumberTest {
 	NaturalNumberCreator creator;
-	
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@Test
-	public void testAbstractNaturalNumber() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testNaturalNumbersEs() {
@@ -54,28 +45,18 @@ public class AbstractNaturalNumberTest {
 		}
 	}
 	@Test
-	public void testGetValue() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTextValues() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTextValue() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testSetValue() {
-		fail("Not yet implemented");
-	}
+		creator = new NaturalNumberCreatorEs();
+		AbstractNaturalNumber n = creator.createNaturalNumber(11);
+		n.setValue(3);
+		assertEquals("tres", n.getTextValue());	}
 
 	@Test
 	public void testAdd() {
-		fail("Not yet implemented");
+		creator = new NaturalNumberCreatorEn();
+		AbstractNaturalNumber n = creator.createNaturalNumber(0);
+		n.add(2);
+		assertEquals("two", n.getTextValue());
 	}
 
 }
