@@ -4,11 +4,7 @@ public class NaturalNumberCreatorEs implements NaturalNumberCreator {
 
 	@Override
 	public AbstractNaturalNumber createNaturalNumber(int value) {
-		// TODO Auto-generated method stub
-		return new NaturalNumberEs(value); 
-
+		return new NaturalNumberEs(value);
 	}
-
-
 
 }

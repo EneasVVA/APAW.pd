@@ -4,9 +4,7 @@ public class NaturalNumberCreatorEn implements NaturalNumberCreator {
 
 	@Override
 	public AbstractNaturalNumber createNaturalNumber(int value) {
-		return new NaturalNumberEn(value); 
+		return new NaturalNumberEn(value);
 	}
-	
-	
-	
+
 }
