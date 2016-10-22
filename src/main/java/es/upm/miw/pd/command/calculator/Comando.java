@@ -1,5 +1,7 @@
 package es.upm.miw.pd.command.calculator;
 
-public class Comando {
+public interface Comando {
+	String name();
 
+	void execute();
 }
